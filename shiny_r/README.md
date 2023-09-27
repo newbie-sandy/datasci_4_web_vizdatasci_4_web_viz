@@ -15,7 +15,7 @@ library(shiny)
 library(ggplot2)
 library(dplyr)
 
-# UI for the Shiny app
+ ### UI for the Shiny app
 ui <- fluidPage(
   titlePanel("Obesity Over 18 Years Old Age-adjusted Prevalence in NY, TX or CA state"),
   sidebarLayout(
@@ -28,23 +28,23 @@ ui <- fluidPage(
   )
 )
 
-# Server logic
+### Server logic
 server <- function(input, output, session) {
   
-  # Load the dataset
+ ### Load the dataset
   df <- reactive({
     url <- "https://github.com/newbie-sandy/datasci_4_web_vizdatasci_4_web_viz.git/subset.csv"
     read.csv(url)
   })
   
   
-  # Update state choices dynamically based on dataset
+  ### Update state choices dynamically based on dataset
   observe({
     obesity_data <- df()
     updateSelectInput(session, "state", choices = sort(unique(obesity_data$StateAbbr)))
   })
   
-  # Render the bar plot
+  ### Render the bar plot
   output$barPlot <- renderPlot({
     obesity_data <- df()
     state_data <- df[obesity_data$StateAbbr == input$state, ]
@@ -63,7 +63,7 @@ server <- function(input, output, session) {
   
 }
 
-# Run the Shiny app
+### Run the Shiny app
 shinyApp(ui, server)
 
 
