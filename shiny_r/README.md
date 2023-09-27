@@ -1,13 +1,10 @@
-zggplot,dplyr and shiny are not installed by default. That's a tiny bit inconvinient
-## New stuff in R
-df <- reactive({})
 ## Troubleshooting 
 The URL is copy-pasted. It should be correct. The git repo is public. 
 ![image](https://github.com/newbie-sandy/datasci_4_web_vizdatasci_4_web_viz/assets/143536852/6c23508f-052f-4a65-a7da-b659d70a72cb)
+- Failed to make the dropdown and display the visualization 
 
-## Problems met
+## Solved Problems
  - install shiny in R: install.packages("shiny")
- - The app.r worked in first shot. GOOD! But the dropdown is empty. EWWWW
  - Close the HTML before running again
 
 
